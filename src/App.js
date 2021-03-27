@@ -6,6 +6,9 @@ import {
   Route,
 } from "react-router-dom";
 import Header from './components/Header';
+import styled from 'styled-components';
+import Sidebar from './components/Sidebar';
+
 
 function App() {
   return (
@@ -13,11 +16,15 @@ function App() {
 
       <Router>
       <>
-        <Switch>
-          <Route path="/" exact>
-            <Header />
-          </Route>
-        </Switch>
+        <Header />
+        <AppBody>
+          <Sidebar />
+          <Switch>
+            <Route path="/" exact>
+
+            </Route>
+          </Switch>
+        </AppBody>
       </>
       </Router>
 
@@ -26,3 +33,9 @@ function App() {
 }
 
 export default App;
+
+
+const AppBody = styled.div`
+  height: 100vh;
+  display: flex;
+`;
